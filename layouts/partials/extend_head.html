@@ -6,30 +6,31 @@
 <!-- Initialize -->
 <script>
 window.addEventListener('load', function() {
-    // 获取当前页面所有图片
-    const images = document.querySelectorAll('.post-content img');
-    if (images.length > 0) {
-        // 为每个图片添加父元素和data属性
-        images.forEach(function(img) {
-            const container = document.createElement('a');
-            container.href = img.src;
-            container.setAttribute('data-src', img.src);
-            img.parentNode.insertBefore(container, img);
-            container.appendChild(img);
-        });
-        
-        // 初始化 lightGallery
-        const galleries = document.querySelectorAll('.post-content');
-        galleries.forEach(function(gallery) {
-            lightGallery(gallery, {
+    // 获取当前文章的图片
+    const articles = document.querySelectorAll('.post-single');
+    articles.forEach(function(article) {
+        const images = article.querySelectorAll('.post-content img');
+        if (images.length > 0) {
+            // 为每个图片添加父元素和data属性
+            images.forEach(function(img) {
+                const container = document.createElement('a');
+                container.href = img.src;
+                container.setAttribute('data-src', img.src);
+                img.parentNode.insertBefore(container, img);
+                container.appendChild(img);
+            });
+            
+            // 初始化 lightGallery
+            lightGallery(article.querySelector('.post-content'), {
                 selector: 'a',
                 controls: false,
                 thumbnail: false,
                 escKey: true,
-                hideScrollbar: true
+                hideScrollbar: true,
+                counter: false
             });
-        });
-    }
+        }
+    });
 });
 </script>
 {{ end }} 
