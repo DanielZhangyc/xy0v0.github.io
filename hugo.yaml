@@ -24,6 +24,7 @@ params:
   description: "You Only Live Once"  # 网站描述
   keywords: [Blog,Coding]  # 网站关键词
   author: xy0v0  # 作者
+  fancybox: true  # 启用fancybox灯箱效果
   # author: ["Me", "You"]  # 多作者设置
   # images: ["<link or path of image for opengraph, twitter-cards>"]  # 社交媒体分享图片
   # DateFormat: "January 2, 2006"  # 日期格式
@@ -122,6 +123,10 @@ params:
 # 导航菜单配置
 menu:
   main:
+    - identifier: home  # 主页
+      name: 首页
+      url: /
+      weight: 1
     - identifier: categories  # 分类页面
       name: 分类
       url: /categories/

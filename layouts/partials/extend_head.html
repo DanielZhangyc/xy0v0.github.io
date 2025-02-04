@@ -31,4 +31,25 @@
             });
         });
     });
-</script> 
+</script>
+
+{{ if .Site.Params.fancybox }}
+<!-- fancybox -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<script>
+    window.addEventListener('load', function() {
+        Fancybox.bind('[data-fancybox="gallery"]', {
+            // 自定义选项
+            Toolbar: {
+                display: [
+                    "zoom",
+                    "slideshow",
+                    "fullscreen",
+                    "close"
+                ]
+            }
+        });
+    });
+</script>
+{{ end }} 
