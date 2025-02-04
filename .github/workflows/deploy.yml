@@ -1,0 +1,35 @@
+name: Deploy Hugo site to Server
+
+on:
+  push:
+    branches:
+      - main  # 当main分支有推送时触发
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: true  # 获取Hugo主题
+          fetch-depth: 0    # 获取全部历史记录以便Hugo生成最近更新时间
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy to Server
+        uses: easingthemes/ssh-deploy@main
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          ARGS: "-rltgoDzvO --delete"
+          SOURCE: "public/"
+          REMOTE_HOST: "154.37.215.51"
+          REMOTE_USER: "root"
+          TARGET: "/opt/1panel/apps/openresty/openresty/www/sites/www.xy0v0.top/index/" 
