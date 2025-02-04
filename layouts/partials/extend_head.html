@@ -1,5 +1,41 @@
-{{if .Page.Site.Params.fancybox }}
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+{{if .Page.Site.Params.lightgallery }}
+<!-- lightgallery -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+
+<!-- Initialize -->
+<script>
+window.addEventListener('load', function() {
+    // 获取当前页面所有图片
+    const images = document.querySelectorAll('.post-content img');
+    if (images.length > 0) {
+        // 为每个图片添加父元素和data属性
+        images.forEach(function(img) {
+            const container = document.createElement('a');
+            container.href = img.src;
+            container.setAttribute('data-src', img.src);
+            img.parentNode.insertBefore(container, img);
+            container.appendChild(img);
+        });
+        
+        // 初始化 lightGallery
+        const galleries = document.querySelectorAll('.post-content');
+        galleries.forEach(function(gallery) {
+            lightGallery(gallery, {
+                selector: 'a',
+                plugins: [lgZoom, lgThumbnail],
+                licenseKey: 'your-license-key',
+                speed: 500,
+                thumbnail: true,
+                // 只显示当前文章的图片作为缩略图
+                appendSubHtmlTo: '.lg-outer',
+                dynamic: false,
+                dynamicEl: []
+            });
+        });
+    }
+});
+</script>
 {{ end }} 
