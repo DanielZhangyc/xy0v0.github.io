@@ -1,7 +1,9 @@
 # 网站基本配置
 baseURL: "https://www.xy0v0.top/"  # 网站的基础URL
 title: xy0v0's Blog  # 网站标题
-paginate: 10  # 每页显示的文章数量
+# paginate: 10  # 已废弃的配置
+pagination:
+  pagerSize: 10  # 每页显示的文章数量
 theme: PaperMod  # 使用的主题
 
 # 网站构建选项
@@ -57,29 +59,22 @@ params:
 
   # 网站标签配置
   label:
-    text: "Home"  # 主页标签文本
+    text: "xy0v0's Blog"  # 主页标签文本
     icon: /apple-touch-icon.png  # 标签图标
     iconHeight: 35  # 图标高度
 
   # 个人资料模式配置
   profileMode:
     enabled: false  # 是否启用个人资料模式
-    title: ExampleSite
-    subtitle: "This is subtitle"
-    imageUrl: "<img location>"
-    imageWidth: 120
-    imageHeight: 120
-    imageTitle: my image
-    buttons:
-      - name: Posts
-        url: posts
-      - name: Tags
-        url: tags
 
   # 主页信息模式配置
-  # homeInfoParams:
-    # Title: "Hi there 👋"  # 主页标题
-    # Content: Welcome to my blog  # 主页内容
+  homeInfoParams:
+    Title: "Hi there 👋"  # 主页标题
+    Content: |
+      Welcome to my blog
+
+      - 技术积累
+      - 生活随笔
 
   # 社交媒体图标配置
   socialIcons:
@@ -143,10 +138,13 @@ menu:
 # 代码高亮配置
 pygmentsUseClasses: true
 markup:
+  goldmark:
+    renderer:
+      unsafe: true  # 允许渲染HTML标签
   highlight:
     noClasses: false
-    anchorLineNos: true
-    codeFences: true
+    # anchorLineNos: true
+    # codeFences: true
     guessSyntax: true
     lineNos: true
     style: gruvbox-material  # 修改为gruvbox-material
@@ -172,3 +170,7 @@ outputs:
     - HTML
     - RSS
     - JSON  # 用于搜索功能
+
+# 忽略特定警告
+ignoreErrors: ["error-remote-getjson"]
+ignoreLogs: ["warning-goldmark-raw-html"]
