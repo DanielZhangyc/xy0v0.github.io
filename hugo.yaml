@@ -37,7 +37,7 @@ params:
   ShowWordCount: true         # 显示字数统计
   ShowRssButtonInSectionTermList: true  # 在分类列表中显示RSS按钮
   UseHugoToc: true           # 使用Hugo内置目录
-  disableSpecial1stPost: false  # 禁用首篇文章特殊样式
+  disableSpecial1stPost: true  # 禁用首篇文章特殊样式
   disableScrollToTop: false   # 禁用返回顶部按钮
   comments: false             # 评论功能
   hidemeta: false            # 隐藏元数据
@@ -145,14 +145,30 @@ pygmentsUseClasses: true
 markup:
   highlight:
     noClasses: false
-    anchorLineNos: true    # 行号锚点
-    codeFences: true       # 代码围栏
-    guessSyntax: true      # 语法推测
-    lineNos: true         # 显示行号
-    style: monokai        # 高亮主题样式
+    anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
+    style: gruvbox-material  # 修改为gruvbox-material
 
+# 性能优化配置
+imaging:
+  quality: 75
+  resampleFilter: Lanczos
+  anchor: Smart
+
+# 缓存设置
+caches:
+  getjson:
+    maxAge: "10m"
+  getcsv:
+    maxAge: "10m"
+  images:
+    maxAge: "24h"
+
+# 输出配置
 outputs:
   home:
     - HTML
     - RSS
-    - JSON # necessary for search
+    - JSON  # 用于搜索功能

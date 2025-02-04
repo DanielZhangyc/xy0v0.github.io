@@ -1,0 +1,53 @@
+/* Gruvbox Material Dark theme */
+:root {
+    --gruvbox-bg: #282828;
+    --gruvbox-fg: #d4be98;
+    --gruvbox-red: #ea6962;
+    --gruvbox-green: #a9b665;
+    --gruvbox-yellow: #d8a657;
+    --gruvbox-blue: #7daea3;
+    --gruvbox-purple: #d3869b;
+    --gruvbox-aqua: #89b482;
+    --gruvbox-gray: #928374;
+}
+
+.highlight {
+    background-color: var(--gruvbox-bg) !important;
+    color: var(--gruvbox-fg) !important;
+}
+
+.highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt {
+    color: var(--gruvbox-red) !important;
+}
+
+.highlight .na, .highlight .nb, .highlight .nc, .highlight .no, .highlight .nd, .highlight .ni, .highlight .ne, .highlight .nf, .highlight .nl, .highlight .nn, .highlight .nx {
+    color: var(--gruvbox-green) !important;
+}
+
+.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .s1, .highlight .ss {
+    color: var(--gruvbox-yellow) !important;
+}
+
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo {
+    color: var(--gruvbox-purple) !important;
+}
+
+.highlight .c, .highlight .ch, .highlight .cm, .highlight .c1, .highlight .cs, .highlight .cp, .highlight .cpf {
+    color: var(--gruvbox-gray) !important;
+}
+
+/* 优化代码块样式 */
+.highlight pre {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+/* 优化代码块中的行号 */
+.highlight .ln, .highlight .lnt {
+    color: var(--gruvbox-gray) !important;
+    margin-right: 0.5rem;
+    padding-right: 0.5rem;
+    border-right: 1px solid var(--gruvbox-gray);
+} 
