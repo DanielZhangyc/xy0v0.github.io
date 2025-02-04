@@ -1,0 +1,7 @@
+{{ if and (not .IsHome) .Site.Params.usefancyapp }}
+<script>
+    Fancybox.bind("[data-fancybox]", {
+        // Your custom options
+    });
+</script>
+{{ end }} 
