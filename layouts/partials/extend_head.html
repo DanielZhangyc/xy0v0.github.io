@@ -1,0 +1,11 @@
+<!-- 添加medium-zoom库 -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+<script>
+    window.addEventListener('load', function() {
+        mediumZoom('img:not(.nozoom)', {
+            margin: 24,
+            background: 'rgba(0,0,0,0.8)',
+            scrollOffset: 40
+        });
+    });
+</script> 
