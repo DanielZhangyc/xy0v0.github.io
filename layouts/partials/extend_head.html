@@ -23,24 +23,10 @@ window.addEventListener('load', function() {
         galleries.forEach(function(gallery) {
             lightGallery(gallery, {
                 selector: 'a',
-                licenseKey: 'your-license-key',
-                speed: 400,
-                thumbnail: false,
                 controls: false,
-                closeOnTap: true,
-                counter: false,
-                download: true,
-                showZoomInOutIcons: false,
+                thumbnail: false,
                 escKey: true,
-                closable: true,
-                enableDrag: false,
-                hideScrollbar: true,
-                mode: 'lg-zoom',
-                startAnimationDuration: 200,
-                backdropDuration: 200,
-                actualSize: true,
-                scaleImageToRatio: true,
-                maxZoomRatio: 2
+                hideScrollbar: true
             });
         });
     }
