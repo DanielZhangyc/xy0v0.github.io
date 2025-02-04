@@ -1,7 +1,0 @@
-{{ if .Page.Site.Params.usefancyapp }}
-<a href="{{ .Destination | safeURL }}" data-fancybox="gallery" data-caption="{{ .Text }}">
-    <img loading="lazy" src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} />
-</a>
-{{ else }}
-<img loading="lazy" src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} />
-{{ end }} 
