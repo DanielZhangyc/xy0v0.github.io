@@ -1,20 +1,5 @@
-{{ if .Site.Params.fancybox }}
-<!-- fancybox -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-<script>
-    window.addEventListener('load', function() {
-        Fancybox.bind('[data-fancybox="gallery"]', {
-            // 自定义选项
-            Toolbar: {
-                display: [
-                    "zoom",
-                    "slideshow",
-                    "fullscreen",
-                    "close"
-                ]
-            }
-        });
-    });
-</script>
+{{ if .Site.Params.usefancyapp }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 {{ end }} 

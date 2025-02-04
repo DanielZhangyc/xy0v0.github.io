@@ -1,7 +1,7 @@
-{{ if .Page.Site.Params.fancybox }}
-<a data-fancybox="gallery" href="{{ .Destination | safeURL }}" {{ with .Title }}data-caption="{{ . }}"{{ end }}>
-    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title }}title="{{ . }}"{{ end }}>
+{{ if .Page.Site.Params.usefancyapp }}
+<a href="{{ .Destination | safeURL }}" data-fancybox="gallery" data-caption="{{ .Text }}">
+    <img loading="lazy" src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} />
 </a>
 {{ else }}
-<img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title }}title="{{ . }}"{{ end }}>
+<img loading="lazy" src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} />
 {{ end }} 
