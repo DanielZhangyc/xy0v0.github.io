@@ -1,0 +1,158 @@
+# 网站基本配置
+baseURL: "https://www.xy0v0.top/"  # 网站的基础URL
+title: xy0v0's Blog  # 网站标题
+paginate: 10  # 每页显示的文章数量
+theme: PaperMod  # 使用的主题
+
+# 网站构建选项
+enableRobotsTXT: true  # 启用robots.txt生成
+buildDrafts: false     # 是否构建草稿文章
+buildFuture: false     # 是否构建未来日期的文章
+buildExpired: false    # 是否构建过期的文章
+
+# 压缩选项
+minify:
+  disableXML: true     # 禁用XML压缩
+  minifyOutput: true   # 启用输出压缩
+
+# 主题参数配置
+params:
+  env: production  # 环境设置，启用Google分析、社交媒体卡片等功能
+  title: ExampleSite  # 网站标题
+  description: "You Only Live Once"  # 网站描述
+  keywords: [Blog,Coding]  # 网站关键词
+  author: xy0v0  # 作者
+  # author: ["Me", "You"]  # 多作者设置
+  # images: ["<link or path of image for opengraph, twitter-cards>"]  # 社交媒体分享图片
+  # DateFormat: "January 2, 2006"  # 日期格式
+  defaultTheme: auto  # 默认主题模式：auto(自动), dark(深色), light(浅色)
+  disableThemeToggle: false  # 是否禁用主题切换按钮
+
+  # 文章功能开关
+  ShowReadingTime: true        # 显示阅读时间
+  ShowShareButtons: true       # 显示分享按钮
+  ShowPostNavLinks: true       # 显示上一篇/下一篇导航
+  ShowBreadCrumbs: true       # 显示面包屑导航
+  ShowCodeCopyButtons: true   # 显示代码复制按钮
+  ShowWordCount: true         # 显示字数统计
+  ShowRssButtonInSectionTermList: true  # 在分类列表中显示RSS按钮
+  UseHugoToc: true           # 使用Hugo内置目录
+  disableSpecial1stPost: false  # 禁用首篇文章特殊样式
+  disableScrollToTop: false   # 禁用返回顶部按钮
+  comments: false             # 评论功能
+  hidemeta: false            # 隐藏元数据
+  hideSummary: false         # 隐藏摘要
+  showtoc: false             # 显示目录
+  tocopen: false             # 目录默认展开
+
+  # 网站资源配置
+  assets:
+    # disableHLJS: true  # 禁用highlight.js
+    # disableFingerprinting: true  # 禁用资源指纹
+    # favicon: "<link / abs url>"  # 网站图标
+    # favicon16x16: "<link / abs url>"  # 16x16图标
+    # favicon32x32: "<link / abs url>"  # 32x32图标
+    # apple_touch_icon: "<link / abs url>"  # 苹果设备触摸图标
+    # safari_pinned_tab: "<link / abs url>"  # Safari固定标签图标
+
+  # 网站标签配置
+  label:
+    text: "Home"  # 主页标签文本
+    icon: /apple-touch-icon.png  # 标签图标
+    iconHeight: 35  # 图标高度
+
+  # 个人资料模式配置
+  profileMode:
+    enabled: false  # 是否启用个人资料模式
+    title: ExampleSite
+    subtitle: "This is subtitle"
+    imageUrl: "<img location>"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: my image
+    buttons:
+      - name: Posts
+        url: posts
+      - name: Tags
+        url: tags
+
+  # 主页信息模式配置
+  # homeInfoParams:
+    # Title: "Hi there 👋"  # 主页标题
+    # Content: Welcome to my blog  # 主页内容
+
+  # 社交媒体图标配置
+  socialIcons:
+    - name: x
+      url: "https://x.com/icyxy0v0"
+    - name: github
+      url: "https://github.com/DanielZhangyc"
+    - name: bilibili
+      url: "https://space.bilibili.com/165404794"
+    - name: email
+      url: "emailto:icyxy0v0@outlook.com"
+
+  # 网站验证配置
+  analytics:
+    google:
+      SiteVerificationTag: "XYZabc"
+    bing:
+      SiteVerificationTag: "XYZabc"
+    yandex:
+      SiteVerificationTag: "XYZabc"
+
+  # 封面图片配置
+  cover:
+    hidden: false # 在所有地方隐藏封面
+    hiddenInList: true  # 在列表页面隐藏
+    hiddenInSingle: false  # 在单页面隐藏
+
+  # 文章编辑配置
+  # editPost:
+    # URL: "https://github.com/<path_to_repo>/content"  # 编辑链接
+    # Text: "Suggest Changes"  # 编辑按钮文本
+    # appendFilePath: true  # 在编辑链接后附加文件路径
+
+  # 搜索配置
+  fuseOpts:
+    isCaseSensitive: false  # 是否区分大小写
+    shouldSort: true        # 是否排序结果
+    location: 0
+    distance: 1000
+    threshold: 0.4         # 匹配阈值
+    minMatchCharLength: 0   # 最小匹配字符长度
+    # limit: 10              # 结果限制数量
+    keys: ["title", "permalink", "summary"]  # 搜索键
+
+# 导航菜单配置
+menu:
+  main:
+    - identifier: categories  # 分类页面
+      name: 分类
+      url: /categories/
+      weight: 10
+    - identifier: tags       # 标签页面
+      name: 标签
+      url: /tags/
+      weight: 20
+    - identifier: search    # 示例链接
+      name: 搜索
+      url: search
+      weight: 30
+
+# 代码高亮配置
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    anchorLineNos: true    # 行号锚点
+    codeFences: true       # 代码围栏
+    guessSyntax: true      # 语法推测
+    lineNos: true         # 显示行号
+    style: monokai        # 高亮主题样式
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
