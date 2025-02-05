@@ -3,7 +3,7 @@ date: 2025-02-05T14:25:28+08:00
 tags:
   - TypeScript
   - Obsidian
-title: 在obsidian中实现文章概括生成
+title: 开发日志 | 在obsidian中实现文章概括生成
 slug: "1738736728"
 share: true
 searchHidden: false
