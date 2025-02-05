@@ -40,9 +40,13 @@ window.addEventListener('load', function() {
 <script>
     window.addEventListener('load', function() {
         // 初始化 mermaid
+        // const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        // const initialTheme = darkModeMediaQuery.matches ? 'dark' : 'default';
+        // console.log(initialTheme);
         mermaid.initialize({
             startOnLoad: true,
-            theme: 'default'
+            securityLevel: 'loose',
+            theme: 'forest',
         });
 
         // 查找并转换 mermaid 代码块

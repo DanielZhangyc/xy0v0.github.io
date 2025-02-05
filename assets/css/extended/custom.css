@@ -22,18 +22,17 @@
 /* 代码块样式 */
 .highlight pre {
     padding: 0.5rem !important;
-    margin: 1rem 0 !important;
     border-radius: 4px !important;
     tab-size: 4 !important;
 }
 
 /* 代码行号样式 */
-.highlight table td {
-    padding: 0 !important;
+/* .highlight table td {
+    padding: 0.1rem !important;
     border: none !important;
-}
+} */
 
-.highlight .lnt {
+/* .highlight .lnt {
     color: var(--gruvbox-gray) !important;
     margin-right: 0.3em !important;
     padding: 0 0.3em 0 0 !important;
@@ -46,15 +45,15 @@
     -moz-user-select: none !important;
     -ms-user-select: none !important;
     user-select: none !important;
-}
+} */
 
 /* 代码内容样式 */
-.highlight .code {
+/* .highlight .code {
     padding-left: 0.5em !important;
-}
+} */
 
 /* 语法高亮 */
-.highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt {
+/* .highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt {
     color: var(--gruvbox-red) !important;
 }
 
@@ -72,7 +71,7 @@
 
 .highlight .c, .highlight .ch, .highlight .cm, .highlight .c1, .highlight .cs, .highlight .cp, .highlight .cpf {
     color: var(--gruvbox-gray) !important;
-}
+} */
 
 .post-summary-box {
     background: var(--entry);
@@ -94,6 +93,6 @@
 }
 
 .dark .post-summary-box {
-    background: var(--code-bg);
+    background: var(#2e2e33);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 } 
