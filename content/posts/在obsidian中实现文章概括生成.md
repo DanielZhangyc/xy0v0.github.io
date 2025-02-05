@@ -73,7 +73,7 @@ export class OpenAIService {
 
 个人对正则表达式比较熟悉，最终采用正则表达式进行
 
-<div class="mermaid">
+```mermaid
 flowchart TD
     A[开始] --> B{检查frontmatter}
     B -->|不存在| C[创建新的frontmatter]
@@ -89,7 +89,8 @@ flowchart TD
     I --> K[保持格式]
     J --> K
     K --> L[更新文档]
-    L --> M[结束]</div>
+    L --> M[结束]
+```
 
 ```TS
 private static readonly FRONTMATTER_REGEX = /^---\n([\s\S]*?)\n---\n*/;
