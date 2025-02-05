@@ -32,7 +32,7 @@
     border: none !important;
 } */
 
-/* .highlight .lnt {
+.highlight .lnt {
     color: var(--gruvbox-gray) !important;
     margin-right: 0.3em !important;
     padding: 0 0.3em 0 0 !important;
@@ -45,15 +45,15 @@
     -moz-user-select: none !important;
     -ms-user-select: none !important;
     user-select: none !important;
-} */
+}
 
 /* 代码内容样式 */
-/* .highlight .code {
+.highlight .code {
     padding-left: 0.5em !important;
-} */
+}
 
 /* 语法高亮 */
-/* .highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt {
+.highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt {
     color: var(--gruvbox-red) !important;
 }
 
@@ -71,7 +71,7 @@
 
 .highlight .c, .highlight .ch, .highlight .cm, .highlight .c1, .highlight .cs, .highlight .cp, .highlight .cpf {
     color: var(--gruvbox-gray) !important;
-} */
+}
 
 .post-summary-box {
     background: var(--entry);

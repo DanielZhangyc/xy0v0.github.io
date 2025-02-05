@@ -35,57 +35,30 @@ window.addEventListener('load', function() {
 </script>
 {{ end }}
 
-{{- if or (.Page.Store.Get "hasMermaid") .Page.Site.Params.mermaid }}
-<script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script>
+<!-- 使用cdn加载文件 -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <script>
-    window.addEventListener('load', function() {
-        // 初始化 mermaid
-        // const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        // const initialTheme = darkModeMediaQuery.matches ? 'dark' : 'default';
-        // console.log(initialTheme);
-        mermaid.initialize({
-            startOnLoad: true,
-            securityLevel: 'loose',
-            theme: 'forest',
-        });
-
-        // 查找并转换 mermaid 代码块
-        const codeBlocks = document.querySelectorAll('pre > code');
-        codeBlocks.forEach(function(codeBlock) {
-            // 检查是否是 mermaid 代码块
-            if (codeBlock.className.includes('language-mermaid') || 
-                codeBlock.parentElement.className.includes('language-mermaid')) {
-                try {
-                    // 创建新的 mermaid div
-                    const mermaidDiv = document.createElement('div');
-                    mermaidDiv.className = 'mermaid';
-                    mermaidDiv.innerHTML = codeBlock.textContent;
-                    
-                    // 替换原有的 pre 元素
-                    const preElement = codeBlock.parentElement;
-                    preElement.parentElement.replaceChild(mermaidDiv, preElement);
-                    
-                    // 尝试渲染图表
-                    mermaid.init(undefined, mermaidDiv);
-                } catch (error) {
-                    console.error('Mermaid conversion error:', error);
-                }
-            }
-        });
-    });
+// 自定义mermaid配置
+const config = {
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+        lineColor: '#6c7a89',
+        fontSize: '16px'
+    },
+    flowchart: {
+        useMaxWidth: false,
+        htmlLabels: true,
+        curve: 'basis'
+    }
+};
+mermaid.initialize(config);
+// 需要注意的是，要将初始化代码放到 window.onload 回调函数里面才有用
+// 否则会因为在html元素加载前进行初始化，找不到元素而失效
+window.onload = () => {
+    window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+}
 </script>
-<style>
-    .mermaid {
-        text-align: center;
-        margin: 1em 0;
-    }
-    .mermaid svg {
-        display: block;
-        margin: auto;
-        max-width: 100%;
-    }
-</style>
-{{- end }}
 
 <style>
 .feather {
