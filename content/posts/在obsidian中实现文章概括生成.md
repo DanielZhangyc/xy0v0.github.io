@@ -73,29 +73,24 @@ export class OpenAIService {
 
 个人对正则表达式比较熟悉，最终采用正则表达式进行
 
-```mermaid
+<div class="mermaid">
 flowchart TD
     A[开始] --> B{检查frontmatter}
     B -->|不存在| C[创建新的frontmatter]
     B -->|存在| D{检查summaryField字段}
-    
     D -->|存在| E[使用已有字段]
     D -->|不存在| F[准备创建新字段]
-    
     C --> G[生成AI摘要]
     E --> G
     F --> G
-    
     G --> H{字段是否存在}
     H -->|存在| I[替换原有内容]
     H -->|不存在| J[添加新字段]
-    
     I --> K[保持格式]
     J --> K
-    
     K --> L[更新文档]
-    L --> M[结束]
-```
+    L --> M[结束]</div>
+
 ```TS
 private static readonly FRONTMATTER_REGEX = /^---\n([\s\S]*?)\n---\n*/;
 private static readonly FIELD_REGEX = (field: string) =>

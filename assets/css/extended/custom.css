@@ -72,4 +72,28 @@
 
 .highlight .c, .highlight .ch, .highlight .cm, .highlight .c1, .highlight .cs, .highlight .cp, .highlight .cpf {
     color: var(--gruvbox-gray) !important;
+}
+
+.post-summary-box {
+    background: var(--entry);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.post-summary-box .summary-title {
+    font-size: 1.2em;
+    margin: 0 0 15px 0;
+    color: var(--primary);
+}
+
+.post-summary-box .summary-content {
+    color: var(--secondary);
+    line-height: 1.6;
+}
+
+.dark .post-summary-box {
+    background: var(--code-bg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 } 
