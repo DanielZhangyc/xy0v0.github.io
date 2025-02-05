@@ -30,6 +30,7 @@ params:
   author: xy0v0  # 作者
   lightgallery: true
   fancybox: false
+  mermaid: true  # 启用Mermaid图表支持
   # author: ["Me", "You"]  # 多作者设置
   # images: ["<link or path of image for opengraph, twitter-cards>"]  # 社交媒体分享图片
   # DateFormat: "January 2, 2006"  # 日期格式

@@ -35,6 +35,22 @@ window.addEventListener('load', function() {
 </script>
 {{ end }}
 
+{{if .Page.Site.Params.mermaid }}
+<!-- mermaid -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+window.addEventListener('load', function() {
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            darkMode: document.documentElement.classList.contains('dark')
+        }
+    });
+});
+</script>
+{{ end }}
+
 <style>
 .feather {
     width: 1em;
