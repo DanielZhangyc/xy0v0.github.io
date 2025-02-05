@@ -9,7 +9,7 @@ searchHidden: false
 disableShare: true
 canonicalURL: ""
 keywords: 
-description: ""
+description: 文章记录了一个基于Swift实现收藏内容导出的功能开发过程，重点在于绘制复古风格的图片。开发者选择保留原阅读器功能，并通过去除HTML标签来处理收藏内容。在图片生成部分，使用UIGraphicsImageRenderer创建报纸风格图片，背景采用米黄色，并加入装饰性边框、纹理效果和引用内容。代码展示了从预处理收藏内容到绘制图片的详细实现，包括标题、日期和引用视图的布局。最终实现了目标效果，但仍面临几个问题：导出界面需调整为图片类型，长文导出图片过大需优化，动画存在卡顿。开发者计划在未来版本逐步完善这些问题。
 series: 系列
 lastmod: 
 lang: cn
