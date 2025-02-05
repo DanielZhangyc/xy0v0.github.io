@@ -24,6 +24,7 @@
     padding: 0.5rem !important;
     border-radius: 4px !important;
     tab-size: 4 !important;
+    font-family: Consolas, Monaco, 'DejaVu Sans Mono', 'Courier New', monospace !important;
 }
 
 /* 代码行号样式 */
