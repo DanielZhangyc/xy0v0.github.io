@@ -35,103 +35,53 @@ window.addEventListener('load', function() {
 </script>
 {{ end }}
 
-{{if .Page.Site.Params.mermaid }}
-<!-- mermaid -->
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+{{- if or (.Page.Store.Get "hasMermaid") .Page.Site.Params.mermaid }}
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <script>
-window.addEventListener('load', function() {
-    const isDark = document.documentElement.classList.contains('dark');
-    mermaid.initialize({
-        startOnLoad: true,
-        theme: isDark ? 'dark' : 'default',
-        flowchart: {
-            useMaxWidth: true,
-            htmlLabels: true,
-            curve: 'basis',
-            nodeSpacing: 50,
-            rankSpacing: 50,
-        },
-        themeVariables: isDark ? {
-            primaryColor: '#3B4252',
-            primaryTextColor: '#ECEFF4',
-            primaryBorderColor: '#81A1C1',
-            lineColor: '#88C0D0',
-            secondaryColor: '#434C5E',
-            tertiaryColor: '#4C566A',
-            mainBkg: '#2E3440',
-            nodeBorder: '#81A1C1',
-            clusterBkg: '#2E3440',
-            clusterBorder: '#81A1C1',
-            titleColor: '#88C0D0',
-            edgeLabelBackground: '#2E3440',
-            nodeTextColor: '#ECEFF4'
-        } : {
-            primaryColor: '#E2E8F0',
-            primaryTextColor: '#2D3748',
-            primaryBorderColor: '#CBD5E0',
-            lineColor: '#4A5568',
-            secondaryColor: '#EDF2F7',
-            tertiaryColor: '#E2E8F0'
-        },
-        securityLevel: 'loose'
-    });
+    window.addEventListener('load', function() {
+        // 初始化 mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default'
+        });
 
-    // 查找所有 mermaid 代码块并初始化
-    document.querySelectorAll('pre code.language-mermaid, .mermaid').forEach(function(element) {
-        if (element.tagName === 'CODE') {
-            const div = document.createElement('div');
-            div.className = 'mermaid';
-            div.textContent = element.textContent;
-            element.parentElement.replaceWith(div);
-        }
+        // 查找并转换 mermaid 代码块
+        const codeBlocks = document.querySelectorAll('pre > code');
+        codeBlocks.forEach(function(codeBlock) {
+            // 检查是否是 mermaid 代码块
+            if (codeBlock.className.includes('language-mermaid') || 
+                codeBlock.parentElement.className.includes('language-mermaid')) {
+                try {
+                    // 创建新的 mermaid div
+                    const mermaidDiv = document.createElement('div');
+                    mermaidDiv.className = 'mermaid';
+                    mermaidDiv.innerHTML = codeBlock.textContent;
+                    
+                    // 替换原有的 pre 元素
+                    const preElement = codeBlock.parentElement;
+                    preElement.parentElement.replaceChild(mermaidDiv, preElement);
+                    
+                    // 尝试渲染图表
+                    mermaid.init(undefined, mermaidDiv);
+                } catch (error) {
+                    console.error('Mermaid conversion error:', error);
+                }
+            }
+        });
     });
-});
 </script>
 <style>
-.mermaid {
-    text-align: center;
-    border-radius: 8px;
-    padding: 1.5em;
-    margin: 1em 0;
-}
-.dark .mermaid {
-    filter: brightness(0.95);
-}
-.mermaid .node rect,
-.mermaid .node circle,
-.mermaid .node ellipse,
-.mermaid .node polygon,
-.mermaid .node path {
-    stroke-width: 2px;
-    rx: 5;
-    ry: 5;
-}
-.dark .mermaid .node rect,
-.dark .mermaid .node circle,
-.dark .mermaid .node ellipse,
-.dark .mermaid .node polygon,
-.dark .mermaid .node path {
-    fill: #3B4252;
-    stroke: #81A1C1;
-}
-.mermaid .edgeLabel {
-    background-color: transparent !important;
-    color: inherit !important;
-}
-.dark .mermaid .edgeLabel {
-    color: #ECEFF4 !important;
-}
-.mermaid .flowchart-link {
-    stroke-width: 2px !important;
-}
-.dark .mermaid .flowchart-link {
-    stroke: #88C0D0 !important;
-}
-.dark .mermaid marker {
-    fill: #88C0D0 !important;
-}
+    .mermaid {
+        text-align: center;
+        margin: 1em 0;
+    }
+    .mermaid svg {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+    }
 </style>
-{{ end }}
+{{- end }}
 
 <style>
 .feather {
@@ -141,4 +91,4 @@ window.addEventListener('load', function() {
     margin-right: 0.3em;
     stroke: currentColor;
 }
-</style> 
+</style>

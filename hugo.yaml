@@ -30,7 +30,7 @@ params:
   author: xy0v0  # 作者
   lightgallery: true
   fancybox: false
-  mermaid: true  # 启用Mermaid图表支持
+  mermaid: true  # 启用 mermaid 支持
   # author: ["Me", "You"]  # 多作者设置
   # images: ["<link or path of image for opengraph, twitter-cards>"]  # 社交媒体分享图片
   # DateFormat: "January 2, 2006"  # 日期格式
@@ -166,17 +166,6 @@ markup:
   goldmark:
     renderer:
       unsafe: true  # 允许渲染HTML标签
-  highlight:
-    noClasses: false
-    # anchorLineNos: true
-    # codeFences: true
-    guessSyntax: true
-    lineNos: true
-    style: gruvbox-material  # 修改为gruvbox-material
-  # 添加对mermaid的支持
-  goldmark:
-    renderer:
-      unsafe: true
     parser:
       attribute:
         block: true
