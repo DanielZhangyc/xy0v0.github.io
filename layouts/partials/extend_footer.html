@@ -1,0 +1,14 @@
+<!-- 给图片添加Fancybox灯箱 -->
+{{ if not .Page.IsHome }}
+{{ $script := resources.Get "js/fancybox.umd.min.js"}}
+<script src={{ $script.Permalink }}></script>
+
+{{ $styles := resources.Get "css/fancybox.min.css"}}
+<link rel="stylesheet" href="{{ $styles.Permalink }}">
+
+<script>
+    Fancybox.bind("[data-fancybox]", {
+        // Your custom options
+    });
+</script>
+{{ end }}
