@@ -31,7 +31,6 @@ params:
   usefancyapp: true
   fancybox: true
   mermaid: true  # 启用 mermaid 支持
-  math: true  # 启用数学公式支持
   # author: ["Me", "You"]  # 多作者设置
   # images: ["<link or path of image for opengraph, twitter-cards>"]  # 社交媒体分享图片
   # DateFormat: "January 2, 2006"  # 日期格式
@@ -202,3 +201,6 @@ outputs:
 # 忽略特定警告
 ignoreErrors: ["error-remote-getjson"]
 ignoreLogs: ["warning-goldmark-raw-html"]
+
+katex:
+  per_page: true
