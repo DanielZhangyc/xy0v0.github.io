@@ -8,6 +8,7 @@ slug: "1738736728"
 share: true
 searchHidden: false
 disableShare: true
+mermaid: true
 canonicalURL: ""
 keywords: 
 description: 文章讨论了在使用 Obsidian 和 Hugo 配置博客时，为文章生成概括内容的实现方法。作者通过在 Obsidian 中使用 requesturl 库向 OpenAI 发送请求，从而获取文章的自动摘要。为适应不同用户的需求，系统允许用户个性化设置添加的字段名，并通过正则表达式对 formatter 内容进行修改。此外，文章详细描述了处理前端内容的流程，包括创建或更新 frontmatter 和 summaryField 字段的步骤。错误处理方面，当API请求遇到问题时，系统会抛出相应的错误类型并提示用户。最终，该功能实现了博客文章摘要的自动生成，提升了阅读和检索的便利性。
