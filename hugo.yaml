@@ -58,12 +58,12 @@ params:
   # 网站资源配置
   assets:
     disableHLJS: true  # 禁用highlight.js
-    # disableFingerprinting: true  # 禁用资源指纹
-    # favicon: "<link / abs url>"  # 网站图标
-    # favicon16x16: "<link / abs url>"  # 16x16图标
-    # favicon32x32: "<link / abs url>"  # 32x32图标
-    # apple_touch_icon: "<link / abs url>"  # 苹果设备触摸图标
-    # safari_pinned_tab: "<link / abs url>"  # Safari固定标签图标
+    disableFingerprinting: true  # 禁用资源指纹
+    favicon: "/images/favicon.ico"
+    favicon16x16: "/images/favicon-16x16.png"
+    favicon32x32: "/images/favicon-32x32.png"
+    apple_touch_icon: "/images/apple-touch-icon.png"
+    safari_pinned_tab: "/images/favicon-16x16.png"
 
   # 网站标签配置
   label:
