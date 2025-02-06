@@ -208,7 +208,7 @@ class ExportManager {
 
 最终效果姑且有了部分我想要的效果，但中文字体的选取可能后续还要更改：
 
-![Demo][https://cn-sy1.rains3.com/pic/pic/2025/02/cc0007c2d90dedf3ef1b992a9beb844d.png]
+![Demo](https://cn-sy1.rains3.com/pic/pic/2025/02/cc0007c2d90dedf3ef1b992a9beb844d.png)
 
 但是仍然有几个问题：
 - 导出界面并不是图片类型的导出，需要修改
