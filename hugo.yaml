@@ -28,6 +28,7 @@ params:
   description: "You Only Live Once -- YOLO"  # 网站描述
   keywords: [Blog,Coding]  # 网站关键词
   author: xy0v0  # 作者
+  usefancyapp: true
   fancybox: true
   mermaid: true  # 启用 mermaid 支持
   math: true  # 启用数学公式支持
