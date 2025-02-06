@@ -13,7 +13,8 @@
 
 
 <!-- 使用cdn加载文件 -->
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+{{ $script := resources.Get "js/fancybox.umd.min.js"}}
+<script src={{ $script.Permalink }}></script>
 <script>
 // 自定义mermaid配置
 const config = {
