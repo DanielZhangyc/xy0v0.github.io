@@ -1,6 +1,8 @@
 ---
 date: 2025-02-08T00:10:50+08:00
-tags: 
+tags:
+  - OI
+  - 动态规划
 title: OI | ABC 391 E 题解整理
 slug: "1738944650"
 share: true
