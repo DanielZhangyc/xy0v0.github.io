@@ -52,7 +52,7 @@ params:
   hidemeta: false            # 隐藏元数据
   hideSummary: false         # 隐藏摘要
   showtoc: true             # 显示目录
-  tocopen: false             # 目录默认展开
+  tocopen: true             # 目录默认展开
 
   # 网站资源配置
   assets:
