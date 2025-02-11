@@ -122,14 +122,9 @@ new RegExp(`^${field}:([\\s\\S]*?)(?=\\n[^\\s]|$)`, 'm');
 
 经过开发，终于可以为博客文章自动生成描述，方便阅读和后续检索
 
-{{< github 
-
-    name="ImageClassifier"
-
-    link="https://github.com/username/image-classifier"
-
-    description="基于 ResNet50 的图像分类器，支持自定义数据集训练，提供完整的训练和推理流程"
-
-    language="Python"
-
+{{< github 
+    name="Auto-AI-Summary"
+    link="https://github.com/DanielZhangyc/Auto-AI-Summary"
+    description="Obsidian的AI摘要生成插件"
+    language="TypeScript"
 >}}
