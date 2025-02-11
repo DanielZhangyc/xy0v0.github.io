@@ -38,6 +38,7 @@ swift如何绘制/渲染图形？查阅到 `UIGraphicsImageRenderer` 可以使�
 
 这个功能的关键所在，我对这个软件的定位主要在于“阅读”，所以我想在导出的图片中体现复古风格，故选取米黄色 `UIColor(red: 253/255, green: 246/255, blue: 227/255, alpha: 1.0)` 作为导出的背景，接下来就是元素的绘制：
 
+{{< collapse summary="查看完整的 pyproject.toml" >}}
 ``` swift
 class ExportManager {
 	...
@@ -205,6 +206,7 @@ class ExportManager {
     }
 }
 ```
+{{< /collapse >}}
 
 最终效果姑且有了部分我想要的效果，但中文字体的选取可能后续还要更改：
 
