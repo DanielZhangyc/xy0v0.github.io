@@ -1,7 +1,0 @@
-{{ if not (.Page.Store.Get "hasMermaid") }}
-  {{ .Page.Store.Set "hasMermaid" true }}
-{{ end }}
-
-<div class="mermaid">
-  {{- .Inner -}}
-</div> 

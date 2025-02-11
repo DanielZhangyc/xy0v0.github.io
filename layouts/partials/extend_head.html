@@ -12,34 +12,6 @@
         });"></script>
 {{ end }} 
 
-{{ if .Params.mermaid }}
-<!-- 使用cdn加载文件 -->
-{{ $script := resources.Get "js/mermaid.min.js"}}
-<script src={{ $script.Permalink }}></script>
-<script>
-// 自定义mermaid配置
-const config = {
-    startOnLoad: true,
-    theme: 'dark',
-    themeVariables: {
-        lineColor: '#6c7a89',
-        fontSize: '16px'
-    },
-    flowchart: {
-        useMaxWidth: true,
-        htmlLabels: true,
-        curve: 'basis'
-    }
-};
-mermaid.initialize(config);
-// 需要注意的是，要将初始化代码放到 window.onload 回调函数里面才有用
-// 否则会因为在html元素加载前进行初始化，找不到元素而失效
-window.onload = () => {
-    window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
-}
-</script>
-{{ end }}
-
 <style>
 .feather {
     width: 1em;
