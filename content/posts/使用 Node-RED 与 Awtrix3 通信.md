@@ -20,8 +20,6 @@ author: xy0v0
 dir: posts
 ---
 
-![IMG_3603.JPG](https://cn-sy1.rains3.com/pic/pic/2025/03/dcd07dfad79be9dc3544a8aa92c5e967.JPG)
-
 Awtrix3 相比 Awtrix2 不必配置服务端，但是其 App 安装与同步方法也有所改变：需要通过 `MQTT` 通信来进行 App 的同步。
 
 ## 安装 Node-RED
@@ -61,5 +59,3 @@ pm2 startup
 ![example](https://cn-sy1.rains3.com/pic/pic/2025/03/44cfd4a15371a3fd6eb51d880b03e933.png)
 
 ![效果1](https://cn-sy1.rains3.com/pic/pic/2025/03/a819a878651a2c53481bf6ad31d8e5dc.JPG)
-
-![效果2](https://cn-sy1.rains3.com/pic/pic/2025/03/dcd07dfad79be9dc3544a8aa92c5e967.JPG)
