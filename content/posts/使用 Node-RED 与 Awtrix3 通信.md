@@ -15,7 +15,7 @@ series: 系列
 lastmod: 
 lang: cn
 cover:
-    image: https://cn-sy1.rains3.com/pic/pic/2025/03/a819a878651a2c53481bf6ad31d8e5dc.JPG
+    image: 
 author: xy0v0
 dir: posts
 ---
