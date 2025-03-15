@@ -10,7 +10,7 @@ disableShare: true
 math: false
 mermaid: false
 canonicalURL: ""
-description: 
+description: 本文介绍了如何在《图灵完备》中设计一套高效的指令集。文章首先明确了计算机的基本操作，包括IMMEDIATE、CALCULATION、COPY和CONDITION，并详细说明了这些操作的二进制编码和功能。接着，文章提出了基础设计方案，包括输入输出指令（如INRx和OUTRx）、寄存器复制指令（如MOVRxRy）以及条件跳转指令（如JMP、JZ等）。通过这些指令集的设计，可以实现高效的汇编语言编程，为图灵完备计算机的操作提供基础支持。
 series: 系列
 lastmod: 
 lang: cn
